@@ -1,4 +1,4 @@
-# Aplicativo do Héstia
+# Área secreta do Héstia
 
 Area Restrita do site oficial do Hestia. Feito em React pelo VsCode.
 
