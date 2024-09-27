@@ -1,9 +1,17 @@
-# React + Vite
+# Aplicativo do Héstia
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Area Restrita do site oficial do Hestia. Feito em React pelo VsCode.
 
-Currently, two official plugins are available:
+## Tecnologias
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-# hestia-secrect-area
+![Logo]([https://1000logos.net/wp-content/uploads/2020/09/Java-Logo.png](https://vitejs.dev/logo-with-shadow.png))
+![Logo]([https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Android_Studio_Trademark.svg/768px-Android_Studio_Trademark.svg.png](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png))
+
+
+## Documentação de apoio
+
+
+## Autores
+
+- [@AnaCruz](https://github.com/cruzanab)
+
