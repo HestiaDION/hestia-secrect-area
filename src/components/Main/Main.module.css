@@ -1,3 +1,10 @@
+:root{
+  --vermelho-claro: #FF3263;
+  --branco: #FDFDFD;
+  --azul-claro: #195198;
+  --azul-preto: #00224D;
+}
+
 .main{
     display: flex;
     align-items: center;
@@ -19,6 +26,21 @@
   
   .introduction_text .subtitle{
     font-size: 32px;
+  }
+
+  .introduction_text button{
+    background-color: var(--branco);
+    margin-top: 54px;
+    width: 372px;
+    height: 73px;
+    border: solid 2px var(--vermelho-claro);
+    border-radius: 8px;
+    font-size: 24px;
+    color: var(--vermelho-claro);
+
+    img{
+      margin-left: 15px; 
+    }
   }
   
   .gif{

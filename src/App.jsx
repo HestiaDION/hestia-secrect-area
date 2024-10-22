@@ -2,6 +2,7 @@ import './styles/App.css'
 
 import Header from './components/Header/Header.jsx'
 import Main from './components/Main/Main.jsx';
+import Statistics from './components/Statistics/Statistics.jsx';
 
 function App() {
 
@@ -9,6 +10,7 @@ function App() {
     <>
       <Header/>
       <Main/>
+      <Statistics/>
     </>
   )
 }
