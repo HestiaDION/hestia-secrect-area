@@ -24,27 +24,29 @@ export default function Statistics(){
     
       return (
         <>
-          <div className={styles.line}></div>
-          <div className={styles.container}>
-            <div className={styles.title}>
-                <h1>Estatísticas</h1>
-                <img src={statistics_icon} alt="statistic icon" />
-            </div>
-            
-            <h3>Este mês</h3>
-            <div className={styles.cards_dashboard}>
-                <CardsStatistics title={'Anúncios mais vistos:'} items={mostViewedAds} avatarShadowColor={'#BB8E4D'} />
-                <CardsStatistics title={'Pessoas atreladas à casa:'} items={peopleLinkedToHouse} avatarShadowColor={'#FF3263'} />
-                <CardsStatistics title={'Últimos chats:'} items={latestChats} avatarShadowColor={'#FF3263'} />
-            </div>
+          <div id='statistics-section'>
+            <div className={styles.line}></div>
+            <div className={styles.container}>
+              <div className={styles.title}>
+                  <h1>Estatísticas</h1>
+                  <img src={statistics_icon} alt="statistic icon" />
+              </div>
+              
+              <h3>Este mês</h3>
+              <div className={styles.cards_dashboard}>
+                  <CardsStatistics title={'Anúncios mais vistos:'} items={mostViewedAds} avatarShadowColor={'#BB8E4D'} />
+                  <CardsStatistics title={'Pessoas atreladas à casa:'} items={peopleLinkedToHouse} avatarShadowColor={'#FF3263'} />
+                  <CardsStatistics title={'Últimos chats:'} items={latestChats} avatarShadowColor={'#FF3263'} />
+              </div>
 
-            <h3 style={{marginTop: "44px"}}>Este ano</h3>
-            <div className={styles.cards_dashboard}>
-                <CardsStatistics title={'Anúncios mais vistos:'} items={mostViewedAds} avatarShadowColor={'#BB8E4D'} />
-                <CardsStatistics title={'Pessoas atreladas à casa:'} items={peopleLinkedToHouse} avatarShadowColor={'#FF3263'} />
-                <CardsStatistics title={'Últimos chats:'} items={latestChats} avatarShadowColor={'#FF3263'} />
-            </div>
+              <h3 style={{marginTop: "44px"}}>Este ano</h3>
+              <div className={styles.cards_dashboard}>
+                  <CardsStatistics title={'Anúncios mais vistos:'} items={mostViewedAds} avatarShadowColor={'#BB8E4D'} />
+                  <CardsStatistics title={'Pessoas atreladas à casa:'} items={peopleLinkedToHouse} avatarShadowColor={'#FF3263'} />
+                  <CardsStatistics title={'Últimos chats:'} items={latestChats} avatarShadowColor={'#FF3263'} />
+              </div>
 
+            </div>
           </div>
         </>
       );
