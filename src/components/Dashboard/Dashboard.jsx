@@ -12,7 +12,6 @@ export default function Dashboard(){
                 </div>
 
                 <div className={styles.powerBI}>
-                    <p>Dashboard</p>
                     <iframe title="Aula4_bank_BI" width="800" height="636" src="https://app.powerbi.com/view?r=eyJrIjoiZDIwMjNjNGUtMDc0ZC00ZTk3LWI4YzAtOGNiZDQxMWU2YjMyIiwidCI6ImIxNDhmMTRjLTIzOTctNDAyYy1hYjZhLTFiNDcxMTE3N2FjMCJ9" frameborder="0" allowFullScreen="true"></iframe>
                 </div>
             </div>
