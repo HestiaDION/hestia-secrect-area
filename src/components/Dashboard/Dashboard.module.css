@@ -1,0 +1,39 @@
+:root{
+    --vermelho-claro: #FF3263;
+    --branco: #FDFDFD;
+    --azul-claro: #195198;
+    --azul-preto: #00224D;
+}
+
+.line {
+    background-color: var(--azul-claro);
+    width: 70%;
+    height: 1px;
+    margin: 100px 30% 65px 0;
+}
+
+.container{
+    margin: 0 40px;
+}
+
+.title{
+    display: flex;
+    gap: 28px;
+    margin-bottom: 47px;
+}
+
+.title h1{
+    color: var(--azul-claro);
+    font-weight: 400;
+    font-size: 32px;
+}
+
+.powerBI{
+    width: 1115px;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    border: 2px solid var(--vermelho-claro);
+    border-radius: 8px;
+    margin-bottom: 137px;
+}
