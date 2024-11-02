@@ -9,31 +9,26 @@ import { useState } from 'react';
 import { Navigate } from 'react-router-dom';
 
 function App() {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(!!localStorage.getItem('token')); // Inicia com o token do localStorage
 
-  // Função para autenticar o usuário
   const login = () => {
-    setIsAuthenticated(true);
+      setIsAuthenticated(true);
   };
 
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route 
-          path="/" 
-          element={
-            isAuthenticated ? <Home /> : <Navigate to="/login" />
-          } 
-        />
-        <Route 
-          path="/login" 
-          element={
-            isAuthenticated ? <Navigate to="/" /> : <Login onLogin={login} />
-          } 
-        />
-      </Routes>
-    </BrowserRouter>
-  )
+      <BrowserRouter>
+          <Routes>
+              <Route 
+                  path="/" 
+                  element={isAuthenticated ? <Home /> : <Navigate to="/login" />} 
+              />
+              <Route 
+                  path="/login" 
+                  element={isAuthenticated ? <Navigate to="/" /> : <Login onLogin={login} />} 
+              />
+          </Routes>
+      </BrowserRouter>
+  );
 }
 
 export default App
