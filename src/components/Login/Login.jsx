@@ -7,12 +7,50 @@ import animacao from '../../assets/gif_login.json'
 import invisible_password from '../../assets/invisible_password.svg'
 import visible_password from '../../assets/visible_password.svg'
 
-export default function Login(){
-
+export default function Login({ props }){
     const [passwordVisible, setPasswordVisible] = useState(false);
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
 
     const togglePasswordVisibility = () => {
         setPasswordVisible(!passwordVisible);
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        if (!email || !password) {
+            alert("Por favor, preencha todos os campos.");
+            return;
+        }
+
+        try {
+            const response = await fetch('http://127.0.0.1:5000/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ email, password }),
+                credentials: 'include'
+            });
+
+            const data = await response.json();
+
+            if (!response.ok) {
+                console.log('Erro na requisição');
+                return;
+            }
+
+            if (data.token) {
+                console.log('Token recebido:', data.token);
+                localStorage.setItem('token', data.token);
+                props.onLogin(); 
+            } else {
+                console.error(data.error);
+            }
+        } catch (error) {
+            console.error(error);
+        }
     };
 
     return(
@@ -44,6 +82,7 @@ export default function Login(){
                     type="text"
                     className={styles.inputField}
                     placeholder="Email"
+                    onChange={(e) => setEmail(e.target.value)}
                     required
                 />
                 <div className={styles.passwordContainer}>
@@ -51,6 +90,7 @@ export default function Login(){
                     type={passwordVisible ? 'text' : 'password'}
                     className={styles.inputField}
                     placeholder="Senha"
+                    onChange={(e) => setPassword(e.target.value)}
                     required
                     />
                     <img
@@ -60,7 +100,7 @@ export default function Login(){
                     />
                     
                 </div>
-                <button className={styles.loginButton}>Login</button>
+                <button className={styles.loginButton} onClick={handleSubmit}>Login</button>
             </div>
         </div>
         </>
