@@ -4,7 +4,7 @@ import styles from './Main.module.css'
 import animacao from '../../assets/animacao.json'
 import red_arrow from '../../assets/red_arrow_icon.svg'
 
-export default function Main(){
+export default function Main({ props }){
 
     const scrollToDashboard = () => {
         const section = document.getElementById('dashboard');
