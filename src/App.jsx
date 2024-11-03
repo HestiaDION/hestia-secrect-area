@@ -15,12 +15,17 @@ function App() {
       setIsAuthenticated(true);
   };
 
+  const logout = () => {
+    localStorage.removeItem('token'); // Remove o token do localStorage
+    setIsAuthenticated(false); // Atualiza o estado de autenticação
+  };
+
   return (
       <BrowserRouter>
           <Routes>
               <Route 
                   path="/" 
-                  element={isAuthenticated ? <Home /> : <Navigate to="/login" />} 
+                  element={isAuthenticated ? <Home onLogout={logout}/> : <Navigate to="/login" />} 
               />
               <Route 
                   path="/login" 

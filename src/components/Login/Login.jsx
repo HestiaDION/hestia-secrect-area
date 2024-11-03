@@ -7,7 +7,7 @@ import animacao from '../../assets/gif_login.json'
 import invisible_password from '../../assets/invisible_password.svg'
 import visible_password from '../../assets/visible_password.svg'
 
-export default function Login({ props }){
+export default function Login({ onLogin }){
     const [passwordVisible, setPasswordVisible] = useState(false);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -44,7 +44,7 @@ export default function Login({ props }){
             if (data.token) {
                 console.log('Token recebido:', data.token);
                 localStorage.setItem('token', data.token);
-                props.onLogin(); 
+                onLogin(); 
             } else {
                 console.error(data.error);
             }
