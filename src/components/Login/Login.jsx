@@ -11,6 +11,8 @@ export default function Login({ onLogin }){
     const [passwordVisible, setPasswordVisible] = useState(false);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
+
 
     const togglePasswordVisibility = () => {
         setPasswordVisible(!passwordVisible);
@@ -37,19 +39,19 @@ export default function Login({ onLogin }){
             const data = await response.json();
 
             if (!response.ok) {
-                console.log('Erro na requisição');
+                setErrorMessage("Email ou senha incorretos.");
                 return;
             }
 
             if (data.token) {
-                console.log('Token recebido:', data.token);
                 localStorage.setItem('token', data.token);
                 onLogin(); 
             } else {
-                console.error(data.error);
+                setErrorMessage(data.error || "Erro desconhecido.");
             }
         } catch (error) {
             console.error(error);
+            setErrorMessage("Erro ao conectar ao servidor.");
         }
     };
 
@@ -100,6 +102,8 @@ export default function Login({ onLogin }){
                     />
                     
                 </div>
+                {/* Aqui está a mensagem de erro */}
+                {errorMessage && <p className={styles.error}>{errorMessage}</p>}
                 <button className={styles.loginButton} onClick={handleSubmit}>Login</button>
             </div>
         </div>
