@@ -9,15 +9,17 @@ import { useState } from 'react';
 import { Navigate } from 'react-router-dom';
 
 function App() {
-  const [isAuthenticated, setIsAuthenticated] = useState(!!localStorage.getItem('token')); // Inicia com o token do localStorage
+  const [isAuthenticated, setIsAuthenticated] = useState(!!localStorage.getItem('token')); 
 
+  // Função para login
   const login = () => {
       setIsAuthenticated(true);
   };
 
+  // Função para logout
   const logout = () => {
-    localStorage.removeItem('token'); // Remove o token do localStorage
-    setIsAuthenticated(false); // Atualiza o estado de autenticação
+    localStorage.removeItem('token'); 
+    setIsAuthenticated(false);
   };
 
   return (

@@ -13,11 +13,12 @@ export default function Login({ onLogin }){
     const [password, setPassword] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
 
-
+    // Função para dar a visibilidade à senha
     const togglePasswordVisibility = () => {
         setPasswordVisible(!passwordVisible);
     };
 
+    // Função para fazer a requisiçãoo
     const handleSubmit = async (e) => {
         e.preventDefault();
 
