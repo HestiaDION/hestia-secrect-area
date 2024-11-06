@@ -21,9 +21,13 @@
     "react-router-dom": "^6.27.0"
   },
   "devDependencies": {
+<<<<<<< HEAD
     "@babel/cli": "^7.25.9",
     "@babel/core": "^7.26.0",
     "@babel/preset-env": "^7.26.0",
+=======
+    "@babel/preset-react": "^7.25.9",
+>>>>>>> 42418f49dc5852610c2b428b7bbbf6cf34da968d
     "@eslint/js": "^9.9.0",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",

@@ -7,12 +7,53 @@ import animacao from '../../assets/gif_login.json'
 import invisible_password from '../../assets/invisible_password.svg'
 import visible_password from '../../assets/visible_password.svg'
 
-export default function Login(){
-
+export default function Login({ onLogin }){
     const [passwordVisible, setPasswordVisible] = useState(false);
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
 
+    // Função para dar a visibilidade à senha
     const togglePasswordVisibility = () => {
         setPasswordVisible(!passwordVisible);
+    };
+
+    // Função para fazer a requisiçãoo
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        if (!email || !password) {
+            alert("Por favor, preencha todos os campos.");
+            return;
+        }
+
+        try {
+            const response = await fetch('https://hestia-flask-secret-area.onrender.com/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ email, password }),
+                credentials: 'include'
+            });
+
+            const data = await response.json();
+
+            if (!response.ok) {
+                setErrorMessage("Email ou senha incorretos.");
+                return;
+            }
+
+            if (data.token) {
+                localStorage.setItem('token', data.token);
+                onLogin(); 
+            } else {
+                setErrorMessage(data.error || "Erro desconhecido.");
+            }
+        } catch (error) {
+            console.error(error);
+            setErrorMessage("Erro ao conectar ao servidor.");
+        }
     };
 
     return(
@@ -44,6 +85,7 @@ export default function Login(){
                     type="text"
                     className={styles.inputField}
                     placeholder="Email"
+                    onChange={(e) => setEmail(e.target.value)}
                     required
                 />
                 <div className={styles.passwordContainer}>
@@ -51,6 +93,7 @@ export default function Login(){
                     type={passwordVisible ? 'text' : 'password'}
                     className={styles.inputField}
                     placeholder="Senha"
+                    onChange={(e) => setPassword(e.target.value)}
                     required
                     />
                     <img
@@ -60,7 +103,9 @@ export default function Login(){
                     />
                     
                 </div>
-                <button className={styles.loginButton}>Login</button>
+                {/* Aqui está a mensagem de erro */}
+                {errorMessage && <p className={styles.error}>{errorMessage}</p>}
+                <button className={styles.loginButton} onClick={handleSubmit}>Login</button>
             </div>
         </div>
         </>
