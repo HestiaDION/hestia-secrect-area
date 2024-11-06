@@ -13,7 +13,7 @@ export default function Dashboard(){
                     </div>
 
                     <div className={styles.powerBI}>
-                        <iframe title="Aula4_bank_BI" width="800" height="636" src="https://app.powerbi.com/view?r=eyJrIjoiZDIwMjNjNGUtMDc0ZC00ZTk3LWI4YzAtOGNiZDQxMWU2YjMyIiwidCI6ImIxNDhmMTRjLTIzOTctNDAyYy1hYjZhLTFiNDcxMTE3N2FjMCJ9" frameBorder="0" allowFullScreen={true}></iframe>
+                    <iframe title="dashboard_area_restrita" width="600" height="373.5" src="https://app.powerbi.com/view?r=eyJrIjoiOGIzNWVjNWItODA4Zi00ODRlLWJiZmYtNjZhOTYxZTYxNDQ3IiwidCI6ImIxNDhmMTRjLTIzOTctNDAyYy1hYjZhLTFiNDcxMTE3N2FjMCJ9" frameborder="0" allowFullScreen="true"></iframe>
                     </div>
                 </div>
             </div>
