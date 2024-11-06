@@ -17,7 +17,7 @@ export default function Main(){
         <div className={styles.main}>
             <div className={styles.introduction_text}>
                 <p className={styles.title}>Olá, Usuário!</p>
-                <p className={styles.subtitle}><strong>Dashboards</strong> com <strong>Estatísticas</strong> sobre o seu andamento no Héstia.</p>
+                <p className={styles.subtitle}><strong>Dashboards</strong> com <strong>Estatísticas</strong> sobre o seu andamento no Héstia!</p>
 
                 <button onClick={scrollToDashboard}>Ver estatísticas <img src={red_arrow} alt='Red Arrow icon'/></button>
                 
